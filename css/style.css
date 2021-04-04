@@ -1,0 +1,129 @@
+/* ALL */
+@import url("https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;500;600;700;800&display=swap");
+* {
+  box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: "Baloo Chettan 2", sans-serif;
+  font-size: 16px;
+}
+.font-alexBrush {
+  font-family: "Alex Brush", cursive;
+  color: #48202a;
+  font-weight: 900;
+}
+/* HEADER */
+.image-holder {
+  width: 100%;
+  height: 400px;
+  background-image: url("../img/bgheader.jpeg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.text-size-xl {
+  font-size: 4rem;
+  line-height: 70px;
+}
+
+/* BODY */
+#content > div {
+  margin-bottom: 3rem;
+}
+.hadith {
+  text-align: center;
+  margin: auto;
+}
+.container-couple {
+  display: flex;
+  justify-content: space-between;
+}
+.couple-half {
+  display: flex;
+  flex-basis: 40%;
+}
+.photo-holder {
+  flex-basis: 40%;
+  padding: 15px;
+}
+.photo-holder img {
+  width: 100%;
+  border-radius: 200px;
+  border: 5px solid #48202a;
+  padding: 5px;
+}
+.desc-groom {
+  flex-basis: 60%;
+  padding: 15px;
+}
+.desc-groom h1,
+.desc-groom p {
+  line-height: 1;
+}
+.schedule {
+  display: flex;
+}
+.akad {
+  flex-basis: 50%;
+}
+.detail-akad {
+  display: flex;
+  justify-content: space-between;
+}
+.detail-time,
+.detail-place {
+  flex-basis: 30%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+.detail-time p,
+.detail-place p {
+  margin: 0 !important;
+}
+.detail-time section:nth-child(1),
+.detail-place section:nth-child(1) {
+  width: fit-content;
+  margin: auto auto 0;
+  border-bottom: 4px solid black;
+}
+.detail-time section:nth-child(2),
+.detail-place section:nth-child(2) {
+  width: fit-content;
+  margin: 0 auto auto;
+}
+.detail-date {
+  flex-basis: 40%;
+  border-right: 5px solid black;
+  /* border-radius: 10px 10px; */
+  border-left: 5px solid black;
+  text-align: center;
+}
+
+/* MEDIA QUERIES */
+
+@media screen and (max-width: 767px) {
+  /* Body */
+}
+@media screen and (max-width: 575px) {
+  /* Body */
+  body {
+    font-size: 14px;
+  }
+  .image-holder {
+    height: 250px;
+  }
+  .container-couple {
+    flex-direction: column;
+  }
+  .schedule {
+    flex-direction: column;
+  }
+  .akad {
+    flex-basis: 100%;
+  }
+}
