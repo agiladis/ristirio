@@ -69,11 +69,12 @@ body {
 }
 .akad {
   flex-basis: 50%;
+  margin-bottom: 30px;
 }
-.detail-akad {
+/* .detail-akad {
   display: flex;
   justify-content: space-between;
-}
+} */
 .detail-time,
 .detail-place {
   flex-basis: 30%;
@@ -97,11 +98,19 @@ body {
   margin: 0 auto auto;
 }
 .detail-date {
+  background-image: url("../img/date.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   flex-basis: 40%;
   border-right: 5px solid black;
   /* border-radius: 10px 10px; */
   border-left: 5px solid black;
   text-align: center;
+}
+.location {
+  text-align: center;
+  margin: auto;
 }
 
 /* MEDIA QUERIES */
