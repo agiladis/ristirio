@@ -172,6 +172,12 @@ iframe {
   /* Body */
 }
 @media screen and (max-width: 575px) {
+  /* ALL */
+  .btn {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.875rem;
+    line-height: 1.5;
+  }
   /* Body */
   body {
     font-size: 14px;
@@ -189,6 +195,6 @@ iframe {
     flex-basis: 100%;
   }
   .countdown-container .container h5 {
-    letter-spacing: 5px;
+    letter-spacing: 3px;
   }
 }
