@@ -179,10 +179,90 @@ iframe {
   width: 100%;
   margin-bottom: 15px;
 }
+.love-story-wrapper {
+  background-image: url("../img/bg_lovestory.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 4rem 0;
+}
+.timelines {
+  width: fit-content;
+  margin: auto;
+}
+.timeline {
+  display: flex;
+  margin-bottom: 20px;
+  color: black;
+  transition: 0.3s;
+}
+.timeline:hover {
+  color: #48202a;
+}
+.timeline:hover .year {
+  color: #48202a;
+  transform: scale(1.1);
+}
+.timeline:hover .timelineBar::after {
+  border: 3px solid #48202a;
+}
+.timelineBar {
+  border: 1px solid #48202a;
+  width: 1px;
+  position: relative;
+  top: 20px;
+  margin-right: 50px;
+  margin-left: 10px;
+}
+.timelineBar::after {
+  border: 3px solid #48202a;
+  border-radius: 50%;
+  content: "";
+  height: 20px;
+  position: absolute;
+  left: -10px;
+  top: -21px;
+  width: 20px;
+  transition: 0.3s;
+}
+.timeline section {
+  display: flex;
+}
+.year {
+  /* margin-right: 40px;  */
+  width: 180px;
+  transition: all 0.8s;
+}
+.timelineContent p,
+.year p {
+  margin: 0;
+}
+.gallery-container {
+  padding: 80px;
+}
+.gallery-container img {
+  border-radius: 5px;
+  margin-bottom: 30px;
+  width: 100%;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 767px) {
   /* Body */
+  .timeline section {
+    flex-direction: column;
+  }
+  .timeline section .year {
+    margin-right: 0px;
+    margin-bottom: 10px;
+  }
+  .timeline {
+    color: black;
+  }
+  .timeline .timelineBar::after {
+    border: 3px solid #48202a;
+  }
 }
 @media screen and (max-width: 575px) {
   /* ALL */
@@ -215,6 +295,15 @@ iframe {
   }
   .protokol-kesehatan > div {
     flex-basis: 100%;
-    padding: 10px 50px;
+    padding: 10px 5rem;
+  }
+  .timelines {
+    margin-bottom: 3rem;
+  }
+  .timelineBar {
+    margin-right: 40px;
+  }
+  .timelineContent {
+    flex-direction: column;
   }
 }
