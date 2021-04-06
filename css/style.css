@@ -29,7 +29,29 @@ body {
   font-size: 4rem;
   line-height: 70px;
 }
-
+.btn-brown {
+  background-color: #48202a;
+  color: white;
+  border-radius: 0;
+  transition: 0.3s ease-out;
+}
+.btn-brown:hover {
+  background-color: white;
+  color: #48202a;
+  border: 1px solid #48202a;
+  width: fit-content !important;
+}
+.btn-outline-brown {
+  background-color: white;
+  color: #48202a;
+  border: 1px solid #48202a;
+  border-radius: 0;
+  transition: 0.3s ease-out;
+}
+.btn-outline-brown:hover {
+  background-color: #48202a;
+  color: white;
+}
 /* BODY */
 #content > div {
   margin-bottom: 3rem;
@@ -112,6 +134,37 @@ body {
   text-align: center;
   margin: auto;
 }
+iframe {
+  border: none !important;
+  width: 100%;
+  height: 400px;
+}
+.i4ewOd-pzNkMb-haAclf {
+  background-color: #48202a !important;
+}
+.countdown-container {
+  background-image: url("../img/bg_countdown.png");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+.countdown-container .container {
+  display: flex;
+  flex-direction: column;
+  padding: 50px 0;
+}
+.countdown-container .container h5 {
+  letter-spacing: 8px;
+}
+.countdown-container .part-countdown:not(:last-child) {
+  border-right: 2px solid black;
+}
+.countdown-container .part-countdown {
+  flex-basis: 25%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
 
 /* MEDIA QUERIES */
 
@@ -134,5 +187,8 @@ body {
   }
   .akad {
     flex-basis: 100%;
+  }
+  .countdown-container .container h5 {
+    letter-spacing: 5px;
   }
 }

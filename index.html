@@ -7,12 +7,11 @@
     <title>Risti & Rio</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cedeen.netlify.app/font-awesome-5-pro/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="./css/lightbox.min.css">
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
-    <header>
-    </header>
     <main>
         <div id="content">
             <div class="landing-page">
@@ -102,11 +101,46 @@
                     <i class="fas fa-map-marker-alt"></i>
                     <div>Perumnas Jl.Pesut Raya Lapangan serbaguna (Kantor RW 10) RT.01 RW.10 Perumnas II, Kayuringin Jaya, Bekasi Selatan, Kota Bekasi, Jawa Barat 17144</div>
                 </div> <!-- end location -->
+                <div class="mb-5 text-center">
+                    <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1aqUlRAlq9FQ3cZBRGQkJFA5Gu6rrD2GN" class="mb-4"></iframe>
+                    <div class="col-md-8 m-auto d-flex justify-content-center">
+                        <a href="https://goo.gl/maps/6RsbHn9rCE1UtM7E7" class="btn btn-brown mr-2 slide" target="_blank"><i class="fas fa-location-arrow mr-2"></i> Google Maps</a>
+                        <a href="./img/maps_code.jpeg" data-lightbox="mapsCode" data-title="Google Maps QRCode" style="cursor: pointer; outline: 20px;">
+                            <p class="btn btn-brown m-0"><i class="fas fa-qrcode mr-2"></i> Scan QR Code</p>
+                        </a>
+                    </div>
+                </div>
             </div> <!-- end schedule-container -->
+            <div class="countdown-container">
+                <div class="container">
+                    <h1 class="font-alexBrush text-center">Countdown</h1>
+                    <h5 class="text-center mb-4">SUNDAY, 30 MAY 2021</h5>
+                    <div class="d-flex mb-5">
+                        <div class="part-countdown">
+                            <h1 id="days" class="m-0"></h1>
+                            <p>Days</p>
+                        </div>
+                        <div class="part-countdown">
+                            <h1 id="hours" class="m-0"></h1>
+                            <p>Hours</p>
+                        </div>
+                        <div class="part-countdown">
+                            <h1 id="minutes" class="m-0"></h1>
+                            <p>Minutes</p>
+                        </div>
+                        <div class="part-countdown">
+                            <h1 id="seconds" class="m-0"></h1>
+                            <p>Seconds</p>
+                        </div>
+                    </div>
+                    <di id="demo"></di>
+                    <a href="https://www.google.com/calendar/render?action=TEMPLATE&text=Risti+%26+Rio+Wedding+Party&details=Hari+bahagia+Risti+%26+Rio&location=Perumnas+Jl.Pesut+Raya+Lapangan+serbaguna+%28Kantor+RW+10%29+RT.01+RW.10+Perumnas+II%2C+Kayuringin+Jaya%2C+Bekasi+Selatan%2C+Kota+Bekasi%2C+Jawa+Barat+17144&dates=20210530T040000Z%2F20210530T100000Z" class="btn btn-outline-brown m-auto"><i class="far fa-calendar-alt mr-2"></i> Ingatkan Saya</a>
+                </div> <!-- end container -->
+            </div> <!-- end countdown-container -->
         </div> <!-- end #content -->
     </main>
-    <footer>
-    </footer>
+    <script src="./js/jquery-3.5.1.js"></script>
+    <script src="./js/lightbox-plus-jquery.min.js"></script>
+    <script src="./js/countdown.js"></script>
 </body>
-
 </html>
