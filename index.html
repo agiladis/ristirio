@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body>
+<body onscroll="playAudio()">
     <main>
         <div id="content">
             <div class="landing-page">
@@ -38,7 +38,7 @@
                 <div class="container-couple">
                     <div class="couple-half">
                         <div class="photo-holder">
-                            <img src="./img/risti.jpg" alt="">
+                            <img src="./img/risti-min.jpg" alt="">
                         </div> <!-- end photo-holder -->
                         <div class="desc-groom">
                             <h1 class="font-alexBrush m-0">Risti</h1>
@@ -68,7 +68,7 @@
                             </p>
                         </div> <!-- end desc-groom -->
                         <div class="photo-holder">
-                            <img src="./img/rio.jpg" alt="">
+                            <img src="./img/rio-min.jpg" alt="">
                         </div> <!-- end photo-holder -->
                     </div> <!-- end couple-half -->
                 </div> <!-- end container-couple -->
@@ -176,11 +176,11 @@
                                     <div class="timelineBar"></div> <!-- end timelineBar -->
                                     <section>
                                         <div class="year">
-                                            <p><small>FEB 2020</small></p>
+                                            <p><small class="font-weight-bold">FEBRUARY 2020</small></p>
                                         </div>
                                         <div class="timelineContent">
                                             <p>Awal bertemu dan kenalan</p>
-                                            <p><small class="text-secondary">Bertemu dimana, kenal dari siapa blok</small></p>
+                                            <p><small class="text-secondary">22 Ferbuari 2020 pertama ketemu di salah satu alfamart, lalu beberapa kali jalan bareng hingga saling merasa nyaman</small></p>
                                         </div> <!-- end timelineContent -->
                                     </section>
                                 </div> <!-- end timeline -->
@@ -188,7 +188,7 @@
                                     <div class="timelineBar"></div> <!-- end timelineBar -->
                                     <section>
                                         <div class="year">
-                                            <p><small>MAR 09 2020</small></p>
+                                            <p><small class="font-weight-bold">MARCH 2020</small></p>
                                         </div>
                                         <div class="timelineContent">
                                             <p>Pada tanggal ini kita jadian</p>
@@ -200,7 +200,7 @@
                                     <div class="timelineBar"></div> <!-- end timelineBar -->
                                     <section>
                                         <div class="year">
-                                            <p><small>JULY 2020</small></p>
+                                            <p><small class="font-weight-bold">JULY 2020</small></p>
                                         </div>
                                         <div class="timelineContent">
                                                 <p>Lamaran !</p>
@@ -212,7 +212,7 @@
                                     <div class="timelineBar"></div> <!-- end timelineBar -->
                                     <section>
                                         <div class="year">
-                                            <p><small>30 MAY 2021</small></p>
+                                            <p><small class="font-weight-bold">MAY 2021</small></p>
                                         </div>
                                         <div class="timelineContent">
                                                 <p>Kita Menikah <span class="text-secondary">(SOON)</span></p>
@@ -227,29 +227,17 @@
                 <h1 class="font-alexBrush text-center mb-4">Gallery</h1>
                 <div class="gallery container">
                     <div class="row">  
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <img src="./img/3178.jpg" alt="">
+                        <div class="col-md-6 col-sm-6 col-12">
+                            <img src="./img/3178-min.jpg" alt="">
                         </div>
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <img src="./img/3107.jpg" alt="">
+                        <div class="col-md-6 col-sm-6 col-12">
+                            <img src="./img/3107-min.jpg" alt="">
                         </div>
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <img src="./img/3126.jpg" alt="">
+                        <div class="col-md-6 col-sm-6 col-12">
+                            <img src="./img/3126-min.jpg" alt="">
                         </div>
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <img src="./img/3136.jpg" alt="">
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <img src="./img/3104.jpg" alt="">
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <img src="./img/3112.jpg" alt="">
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <img src="./img/3149.jpg" alt="">
-                        </div>
-                        <div class="col-md-3 col-sm-6 col-12">
-                            <img src="./img/3203.jpg" alt="">
+                        <div class="col-md-6 col-sm-6 col-12">
+                            <img src="./img/3136-min.jpg" alt="">
                         </div>
                     </div> <!-- end row -->
                 </div> <!-- end gallery -->
@@ -303,9 +291,35 @@
                 </div>
             </div>
         </div> <!-- end #content -->
+        <!-- Background Music -->
+        <audio id="music" preload="auto" loop>
+            <source src="./music/heather.mp3" type="audio/mpeg">
+            Browsermu tidak mendukung tag audio
+        </audio>
+        <a id="playButton" onload="playAudio()" onclick="playAudio()" class="btn btn-brown" title="Play"><i class="fas fa-play-circle fa-2x"></i></a>
+        <a id="pauseButton" onclick="pauseAudio()" class="btn btn-brown d-none" title="Pause"><i class="fas fa-pause-circle fa-2x"></i></i></a>
     </main>
+    <footer class="text-center p-2">
+        <p class="m-0">Copyright &copy 2021 - Made with &#10084;</p>
+		<p><b>AGIL ADI SAPUTRO</b></p>
+    </footer>
     <script src="./js/jquery-3.5.1.js"></script>
     <script src="./js/lightbox-plus-jquery.min.js"></script>
     <script src="./js/countdown.js"></script>
+    <script>
+        const music = document.querySelector('#music');
+        const playButton = document.querySelector('#playButton');
+        const pauseButton = document.querySelector('#pauseButton');
+        function playAudio() {
+            music.play();
+            playButton.classList.add('d-none')
+            pauseButton.classList.remove('d-none')
+        }
+        function pauseAudio() {
+            music.pause();
+            pauseButton.classList.add('d-none')
+            playButton.classList.remove('d-none')
+        }
+    </script>
 </body>
 </html>

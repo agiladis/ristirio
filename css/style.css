@@ -39,6 +39,8 @@ body {
   background-color: white;
   color: #48202a;
   border: 1px solid #48202a;
+  width: -webkit-fit-content !important;
+  width: -moz-fit-content !important;
   width: fit-content !important;
 }
 .btn-outline-brown {
@@ -110,12 +112,16 @@ body {
 }
 .detail-time section:nth-child(1),
 .detail-place section:nth-child(1) {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin: auto auto 0;
   border-bottom: 4px solid black;
 }
 .detail-time section:nth-child(2),
 .detail-place section:nth-child(2) {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto auto;
 }
@@ -187,6 +193,8 @@ iframe {
   padding: 4rem 0;
 }
 .timelines {
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
   width: fit-content;
   margin: auto;
 }
@@ -266,10 +274,21 @@ iframe {
 .dana img {
   width: 100%;
 }
+#playButton,
+#pauseButton {
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+}
+
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 767px) {
   /* Body */
+  .protokol-kesehatan > div {
+    flex-basis: 50%;
+    padding: 20px;
+  }
   .timeline section {
     flex-direction: column;
   }
