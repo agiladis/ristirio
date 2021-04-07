@@ -230,7 +230,7 @@ iframe {
 }
 .year {
   /* margin-right: 40px;  */
-  width: 180px;
+  min-width: 180px;
   transition: all 0.8s;
 }
 .timelineContent p,
@@ -245,7 +245,27 @@ iframe {
   margin-bottom: 30px;
   width: 100%;
 }
-
+.closing-hadith {
+  background-image: url("../img/bg_lovestory.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 4rem 0;
+}
+.qrcode-container {
+  display: flex;
+}
+.ovo,
+.dana {
+  flex-basis: 50%;
+  display: flex;
+  flex-direction: column;
+  padding: 5rem;
+}
+.ovo img,
+.dana img {
+  width: 100%;
+}
 /* MEDIA QUERIES */
 
 @media screen and (max-width: 767px) {
@@ -305,5 +325,12 @@ iframe {
   }
   .timelineContent {
     flex-direction: column;
+  }
+  .qrcode-container {
+    flex-direction: column;
+  }
+  .ovo,
+  .dana {
+    padding: 20px 5rem;
   }
 }
