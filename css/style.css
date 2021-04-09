@@ -221,7 +221,7 @@ iframe {
   margin-bottom: 15px;
 }
 .love-story-wrapper {
-  background-image: url("../img/bg_lovestory.jpg");
+  background-image: url("../img/bg_lovestory.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -289,7 +289,7 @@ iframe {
   width: 100%;
 }
 .closing-hadith {
-  background-image: url("../img/bg_lovestory.jpg");
+  background-image: url("../img/bg_lovestory.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
