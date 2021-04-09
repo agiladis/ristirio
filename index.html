@@ -11,7 +11,7 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
-<body onscroll="playAudio()">
+<body>
     <main>
         <div id="content">
             <div class="landing-page">
@@ -86,14 +86,14 @@
                 <div class="schedule">
                     <div class="akad">
                         <h1 class="font-alexBrush text-center">Akad Nikah</h1>
-                        <div class="">
-                            <img class="w-100" src="./img/date_akad.png" alt="">
+                        <div class="mb-2">
+                            <img class="w-100" src="./img/date_akad.svg" alt="Akad pada pukul 10.00 - 11.00 WIB">
                         </div>
                     </div> <!-- end akad -->
                     <div class="akad">
                         <h1 class="font-alexBrush text-center">Resepsi</h1>
                         <div class="">
-                            <img class="w-100" src="./img/date_resepsi.png" alt="">
+                            <img class="w-100" src="./img/date_resepsi.svg" alt="Resepsi pada pukul 11.00 - 17.00 WIB">
                         </div>
                     </div> <!-- end akad -->
                 </div> <!-- end schedule -->
@@ -243,7 +243,7 @@
                 </div> <!-- end gallery -->
             </div> <!-- end gallery-container -->
             <div class="rsvp container">
-                <h1 class="font-alexBrush text-center mb-4">Konfirmasi Kehadiran</h1>
+                <h1 class="font-alexBrush text-center mb-4">Data Kehadiran</h1>
                 <form>
                     <div class="form-group">
                       <label for="namaTamu">Nama</label>
@@ -255,12 +255,20 @@
                       </div>
                     <div class="form-group">
                       <label for="konfirmasi">Konfirmasi Kehadiran</label>
-                      <select class="form-control" id="konfirmasi">
-                        <option>- pilih Jawaban -</option>
-                        <option>Hadir</option>
-                        <option>Maaf, Berhalangan hadir</option>
+                      <select class="form-control" id="konfirmasi" onchange="checkKonfirmasi()">
+                        <option selected>- pilih Jawaban -</option>
+                        <option id="hadir" value="hadir">Hadir</option>
+                        <option value="tidak hadir">Maaf, Berhalangan hadir</option>
                       </select>
                     </div>
+                    <div class="form-group">
+                        <label for="konfirmasiSesi">Kehadiran Sesi</label>
+                        <select class="form-control" id="konfirmasiSesi" disabled>
+                          <option>- pilih Jawaban -</option>
+                          <option value="1">Sesi 1 : 11.00 - 14.00</option>
+                          <option value="2">Sesi 2 : 14.00 - 17.00</option>
+                        </select>
+                      </div>
                     <a href="Javascript:void(0);" class="btn btn-brown">Konfirmasi</a>
                   </form>
             </div> <!-- end rsvp -->
@@ -289,19 +297,107 @@
                         </a>
                     </div>
                 </div>
-            </div>
+            </div> <!-- end container -->
+            <div class="chatbox-container ">
+                <h1 class="font-alexBrush text-center mb-4">Ucapan dan Do'a</h1>
+                <div class="hadith col-md-8 mb-4">
+                    <p>
+                        Tinggalkan pesan dan Do'a anda untuk kami
+                    </p>
+                </div>
+                <div class="container d-flex justify-content-between">
+                    <div class="chatbox">
+                        <ul>
+                            <li>
+                                <div class="message-data">
+                                    <span class="message-data-name">
+                                        <img src="./img/profile.svg" alt="Profile Foto">
+                                        Agil Adi
+                                    </span> <!-- end message-data-name -->
+                                    <span class="message-data-time">
+                                        12:02 AM, Today
+                                    </span> <!-- end message-data-time -->
+                                </div> <!-- end message-data -->
+                                <div class="message">
+                                    Selamat, bla bla bla Are we meeting today? Project has been already finished and I have results to show you.
+                                </div> <!-- end message -->
+                            </li>
+                            <li>
+                                <div class="message-data">
+                                    <span class="message-data-name">
+                                        <img src="./img/profile.svg" alt="Profile Foto">
+                                        Agil Adi
+                                    </span> <!-- end message-data-name -->
+                                    <span class="message-data-time">
+                                        12:02 AM, Today
+                                    </span> <!-- end message-data-time -->
+                                </div> <!-- end message-data -->
+                                <div class="message">
+                                    Selamat, bla bla bla Are we meeting today? Project has been already finished and I have results to show you.
+                                </div> <!-- end message -->
+                            </li>
+                            <li>
+                                <div class="message-data">
+                                    <span class="message-data-name">
+                                        <img src="./img/profile.svg" alt="Profile Foto">
+                                        Agil Adi
+                                    </span> <!-- end message-data-name -->
+                                    <span class="message-data-time">
+                                        12:02 AM, Today
+                                    </span> <!-- end message-data-time -->
+                                </div> <!-- end message-data -->
+                                <div class="message">
+                                    Selamat,  I have results to show you.
+                                </div> <!-- end message -->
+                            </li>
+                            <li>
+                                <div class="message-data">
+                                    <span class="message-data-name">
+                                        <img src="./img/profile.svg" alt="Profile Foto">
+                                        Agil Adi
+                                    </span> <!-- end message-data-name -->
+                                    <span class="message-data-time">
+                                        12:02 AM, Today
+                                    </span> <!-- end message-data-time -->
+                                </div> <!-- end message-data -->
+                                <div class="message">
+                                    Selamat, menempuh hidup baru wall kajlsd isd as Are we meeting today? Project has been already finished and I have results to show you.
+                                </div> <!-- end message -->
+                            </li>
+                        </ul>
+                    </div> <!-- end chatbox -->
+                    <div class="form-wishes">
+                        <form>
+                            <div class="form-group">
+                              <input type="text" class="form-control" placeholder="Nama Lengkap Anda">
+                            </div>
+                            <div class="form-group">
+                                <textarea class="form-control" rows="3" placeholder="Tulis harapan dan do'a"></textarea>
+                              </div>
+                            <a href="Javascript:void(0);" class="btn btn-brown">Kirim</a>
+                          </form>
+                    </div> <!-- end form-wishes -->
+                </div> <!-- end container -->
+                
+            </div> <!-- end chatbox-container -->
         </div> <!-- end #content -->
         <!-- Background Music -->
         <audio id="music" preload="auto" loop>
-            <source src="./music/heather.mp3" type="audio/mpeg">
+            <source src="./music/elvis_cover.mp3" type="audio/mpeg">
             Browsermu tidak mendukung tag audio
         </audio>
-        <a id="playButton" onload="playAudio()" onclick="playAudio()" class="btn btn-brown" title="Play"><i class="fas fa-play-circle fa-2x"></i></a>
+        <a id="playButton" onclick="playAudio()" class="btn btn-brown" title="Play"><i class="fas fa-play-circle fa-2x"></i></a>
         <a id="pauseButton" onclick="pauseAudio()" class="btn btn-brown d-none" title="Pause"><i class="fas fa-pause-circle fa-2x"></i></i></a>
     </main>
-    <footer class="text-center p-2">
-        <p class="m-0">Copyright &copy 2021 - Made with &#10084;</p>
-		<p><b>AGIL ADI SAPUTRO</b></p>
+    <footer>
+        <span>&copy; AGIL ADI SAPUTRO 2021</span>
+        <div class="social-media">
+            <a href="mailto:agiladisaputro@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.instagram.com/agiladis_/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://github.com/agiladis/" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://agiladis.github.io/agiladisaputro/" target="_blank"><i class="fab fa-chrome"></i></a>
+            <a href="https://www.facebook.com/agil.adi.121/" target="_blank"><i class="fab fa-facebook"></i></a>
+        </div> <!-- end social-media -->
     </footer>
     <script src="./js/jquery-3.5.1.js"></script>
     <script src="./js/lightbox-plus-jquery.min.js"></script>
@@ -310,6 +406,7 @@
         const music = document.querySelector('#music');
         const playButton = document.querySelector('#playButton');
         const pauseButton = document.querySelector('#pauseButton');
+        const hadir = document.querySelector('#hadir')
         function playAudio() {
             music.play();
             playButton.classList.add('d-none')
@@ -319,6 +416,13 @@
             music.pause();
             pauseButton.classList.add('d-none')
             playButton.classList.remove('d-none')
+        }
+        function checkKonfirmasi() {
+            if(hadir.selected == true) {
+                $('#konfirmasiSesi').attr('disabled', false);
+            } else {
+                $('#konfirmasiSesi').attr('disabled', true);
+            }
         }
     </script>
 </body>
