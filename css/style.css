@@ -1,10 +1,15 @@
+/* #DB5677
+#E19BAD
+ */
+
 /* ALL */
 @import url("https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;500;600;700;800&display=swap");
 * {
   box-sizing: border-box;
 }
-html {
+html,
+.chatbox {
   scroll-behavior: smooth;
 }
 body {
@@ -244,7 +249,7 @@ iframe {
 }
 .timeline:hover .year {
   color: #48202a;
-  transform: scale(1.1);
+  /* transform: scale(1.1); */
 }
 .timeline:hover .timelineBar::after {
   border: 3px solid #48202a;
@@ -314,10 +319,13 @@ iframe {
   position: fixed;
   bottom: 1.5rem;
   right: 1rem;
+  cursor: pointer;
+  color: #48202a;
 }
 /* CHAT */
 .chatbox-container {
-  background: linear-gradient(120deg, #17bebb, #f0a6ca);
+  /* background: linear-gradient(120deg, #17bebb, #f0a6ca); */
+  background: linear-gradient(120deg, #a5a8a0, #edecd4);
   padding: 4rem 0;
 }
 .chatbox {
@@ -328,6 +336,12 @@ iframe {
   padding: 20px;
   box-shadow: 1px 1px 12px rgb(0 0 0 / 10%);
   flex-basis: 50%;
+}
+#new-messages-icon {
+  position: sticky;
+  bottom: 0;
+  left: 100%;
+  color: #888;
 }
 .message-data {
   margin-bottom: 15px;
@@ -345,7 +359,7 @@ iframe {
 }
 .message {
   background: rgba(255, 255, 255, 0.2);
-  color: white;
+  color: black;
   padding: 18px 20px;
   line-height: 20px;
   font-size: 16px;
@@ -367,6 +381,9 @@ iframe {
   border-width: 10px;
   margin-left: -10px;
 }
+#wish-room li:last-child .message {
+  margin-bottom: -28px;
+}
 .form-wishes {
   flex-basis: 40%;
 }
@@ -376,7 +393,6 @@ iframe {
   color: white;
   border-radius: 0;
   border: none;
-  box-shadow: 1px 1px 12px rgb(0 0 0 / 10%);
 }
 
 /* FOOTER */

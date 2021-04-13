@@ -307,7 +307,7 @@
                 </div>
                 <div class="container d-flex justify-content-between">
                     <div class="chatbox">
-                        <ul>
+                        <ul id="wish-room" class="mb-0">
                             <li>
                                 <div class="message-data">
                                     <span class="message-data-name">
@@ -365,20 +365,23 @@
                                 </div> <!-- end message -->
                             </li>
                         </ul>
+                        <span id="new-messages-icon" class="fa-stack fa-sm" onclick="scrollToBottom()">
+                            <i class="fas fa-circle fa-stack-2x"></i>
+                            <i class="fas fa-angle-double-down fa-stack-1x fa-inverse"></i>
+                        </span>
                     </div> <!-- end chatbox -->
                     <div class="form-wishes">
                         <form>
                             <div class="form-group">
-                              <input type="text" class="form-control" placeholder="Nama Lengkap Anda">
+                              <input id="wish-from" type="text" class="form-control" placeholder="Nama Lengkap Anda">
                             </div>
                             <div class="form-group">
-                                <textarea class="form-control" rows="3" placeholder="Tulis harapan dan do'a"></textarea>
+                                <textarea id="wish-content" class="form-control" rows="5" placeholder="Tulis harapan dan do'a"></textarea>
                               </div>
-                            <a href="Javascript:void(0);" class="btn btn-brown">Kirim</a>
+                            <a href="Javascript:void(0);" onclick="addWishes()" class="btn btn-outline-brown">Kirim</a>
                           </form>
                     </div> <!-- end form-wishes -->
                 </div> <!-- end container -->
-                
             </div> <!-- end chatbox-container -->
         </div> <!-- end #content -->
         <!-- Background Music -->
@@ -386,8 +389,17 @@
             <source src="./music/elvis_cover.mp3" type="audio/mpeg">
             Browsermu tidak mendukung tag audio
         </audio>
-        <a id="playButton" onclick="playAudio()" class="btn btn-brown" title="Play"><i class="fas fa-play-circle fa-2x"></i></a>
-        <a id="pauseButton" onclick="pauseAudio()" class="btn btn-brown d-none" title="Pause"><i class="fas fa-pause-circle fa-2x"></i></i></a>
+        
+        <span id="playButton" onclick="playAudio()" class="fa-stack fa-lg">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-play fa-stack-1x fa-inverse"></i>
+        </span>
+        <span id="pauseButton" onclick="pauseAudio()" class="fa-stack fa-lg d-none">
+            <i class="fas fa-circle fa-stack-2x"></i>
+            <i class="fas fa-pause fa-stack-1x fa-inverse"></i>
+        </span>
+        <!-- <a id="playButton" onclick="playAudio()" class="btn btn-brown" title="Play"><i class="far fa-play fa-2x"></i></a> -->
+        <!-- <a id="pauseButton" onclick="pauseAudio()" class="btn btn-brown d-none" title="Pause"><i class="fas fa-pause fa-2x"></i></i></a> -->
     </main>
     <footer>
         <span>&copy; AGIL ADI SAPUTRO 2021</span>
@@ -399,6 +411,15 @@
             <a href="https://www.facebook.com/agil.adi.121/" target="_blank"><i class="fab fa-facebook"></i></a>
         </div> <!-- end social-media -->
     </footer>
+    <script>
+        // window.addEventListener('scroll', () => {
+        //     let scrolled = window.scrollY //mengetahui brp pixel yang ke scroll
+        //     console.log(scrolled)
+        //     var iHeight = $("#wish-room").height();
+        //     console.log(iHeight)
+        // })
+        
+    </script>
     <script src="./js/jquery-3.5.1.js"></script>
     <script src="./js/lightbox-plus-jquery.min.js"></script>
     <script src="./js/countdown.js"></script>
@@ -407,6 +428,10 @@
         const playButton = document.querySelector('#playButton');
         const pauseButton = document.querySelector('#pauseButton');
         const hadir = document.querySelector('#hadir')
+        const wishRoom = document.querySelector('#wish-room')
+        const wishFrom = document.querySelector('#wish-from')
+        const wishContent = document.querySelector('#wish-content')
+        
         function playAudio() {
             music.play();
             playButton.classList.add('d-none')
@@ -424,6 +449,50 @@
                 $('#konfirmasiSesi').attr('disabled', true);
             }
         }
+        function addWishes() {
+            // Get time
+            var date = new Date(); // for now
+
+            let hours = date.getHours();
+            let minutes = date.getMinutes();
+            let ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            // hours = hours ? hours : 12; // the hour '0' should be '12'
+            minutes = minutes < 10 ? '0'+minutes : minutes;
+            let strTime = hours + ':' + minutes + ' ' + ampm;
+            wishRoom.innerHTML += `
+                            <li>
+                                <div class="message-data">
+                                    <span class="message-data-name">
+                                        <img src="./img/profile.svg" alt="Profile Foto">
+                                        ${wishFrom.value}
+                                    </span> <!-- end message-data-name -->
+                                    <span class="message-data-time">
+                                        ${strTime}, Today
+                                    </span> <!-- end message-data-time -->
+                                </div> <!-- end message-data -->
+                                <div class="message">
+                                    ${wishContent.value}
+                                </div> <!-- end message -->
+                            </li>`
+            // Abis pencet kirim ilangin valuenya di form
+            wishFrom.value = ""
+            wishContent.value = ""
+        }
+
+        
+        // Ngehapus icon new message pada wish jika berada di bawah
+        // document.querySelector('.chatbox').addEventListener("scroll", evt => {
+        //     console.log(evt.target.scrollTop)
+        //     console.log( document.querySelector('.chatbox').scrollHeight)
+        //     if(evt.target.scrollTop == wishRoom.scrollHeight) {
+        //         console.log("mentok")
+        //     }
+        // })
+        function scrollToBottom() {
+            document.querySelector('.chatbox').scrollTo(0,document.querySelector('.chatbox').scrollHeight);
+        }
+        
     </script>
 </body>
 </html>
