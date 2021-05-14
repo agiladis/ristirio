@@ -5,7 +5,9 @@
 /* ALL */
 @import url("https://fonts.googleapis.com/css2?family=Alex+Brush&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Baloo+Chettan+2:wght@400;500;600;700;800&display=swap");
-* {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 html,
@@ -13,8 +15,11 @@ html,
   scroll-behavior: smooth;
 }
 body {
+  margin: 0 !important;
+  padding: 0 !important;
   font-family: "Baloo Chettan 2", sans-serif;
   font-size: 16px;
+  /* overflow-x: hidden !important; */
 }
 .font-alexBrush {
   font-family: "Alex Brush", cursive;
@@ -90,6 +95,10 @@ ul {
 }
 ul li {
   list-style: none;
+}
+.overflow-x-hidden {
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
 }
 /* BODY */
 #content > div:not(:last-child) {
@@ -338,6 +347,7 @@ iframe {
   flex-basis: 50%;
 }
 #new-messages-icon {
+  position: -webkit-sticky;
   position: sticky;
   bottom: 0;
   left: 100%;
@@ -390,7 +400,7 @@ iframe {
 .form-wishes .form-control {
   background: rgba(255, 255, 255, 0.2);
   box-shadow: 1px 1px 12px rgb(0 0 0 / 10%);
-  color: white;
+  color: black;
   border-radius: 0;
   border: none;
 }
